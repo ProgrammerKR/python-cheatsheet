@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly Python cheatsheet with examples and explanations in simple English.">
+  <title>Python Cheatsheet - ProX Edition</title>
+  <link href="https://cdn.jsdelivr.net/gh/ProgrammerKR/ProXtyle@latest/dist/css/ProXtyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ProgrammerKR/ProXIcons@latest/css/proxicons.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+    }
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: #fff;
+    }
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #007bff !important;
+    }
+    .px-icon {
+      font-size: 1.4rem;
+      margin-right: 0.5rem;
+      color: #007bff;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+    footer {
+      background-color: #0d6efd;
+    }
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      section {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Python Cheatsheet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#intro">Intro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#setup">Setup</a></li>
+          <li class="nav-item"><a class="nav-link" href="#variables">Variables</a></li>
+          <li class="nav-item"><a class="nav-link" href="#datatypes">Data Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="#operators">Operators</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conditionals">Conditionals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#loops">Loops</a></li>
+          <li class="nav-item"><a class="nav-link" href="#functions">Functions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lists">Lists</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dictionaries">Dictionaries</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tuples">Tuples</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sets">Sets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#strings">Strings</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fileio">File I/O</a></li>
+          <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#exceptions">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#oop">OOP</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bestpractices">Best Practices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Python Cheatsheet - ProX Edition</h1>
+      <p class="lead">Your ultimate beginner-friendly guide to Python with clear explanations and examples in simple English.</p>
+    </div>
+  </header>
+
+  <section id="intro">
+    <div class="container">
+      <h2><i class="px px-info-circle"></i> What is Python?</h2>
+      <p>Python is a simple, readable programming language used for web development, data analysis, automation, and more. It’s beginner-friendly and widely used.</p>
+    </div>
+  </section>
+
+  <section id="setup">
+    <div class="container">
+      <h2><i class="px px-download"></i> Setting Up Python</h2>
+      <p>Download Python from <a href="https://www.python.org">python.org</a> and install it. Use an editor like VS Code or IDLE to write code.</p>
+      <p>To check if Python is installed, open a terminal and type:</p>
+      <pre><code>python --version</code></pre>
+      <p>Run a Python file with:</p>
+      <pre><code>python filename.py</code></pre>
+    </div>
+  </section>
+
+  <section id="variables">
+    <div class="container">
+      <h2><i class="px px-box"></i> Variables</h2>
+      <p>Variables store data like numbers or text. You don’t need to declare their type.</p>
+      <pre><code>name = "Alice"  # String
+age = 25        # Integer
+price = 19.99   # Float
+is_student = True  # Boolean</code></pre>
+      <p>Rules: Use lowercase, no spaces, start with a letter or underscore.</p>
+    </div>
+  </section>
+
+  <section id="datatypes">
+    <div class="container">
+      <h2><i class="px px-database"></i> Data Types</h2>
+      <p>Python has several data types to store different kinds of data:</p>
+      <ul>
+        <li><code>int</code> — Whole numbers (e.g., 5)</li>
+        <li><code>float</code> — Decimal numbers (e.g., 3.14)</li>
+        <li><code>str</code> — Text (e.g., "Hello")</li>
+        <li><code>bool</code> — True or False</li>
+        <li><code>list</code> — Ordered, mutable collection</li>
+        <li><code>tuple</code> — Ordered, immutable collection</li>
+        <li><code>dict</code> — Key-value pairs</li>
+        <li><code>set</code> — Unordered, unique items</li>
+      </ul>
+      <p>Check type with:</p>
+      <pre><code>x = 42
+print(type(x))  # Output: <class 'int'></code></pre>
+    </div>
+  </section>
+
+  <section id="operators">
+    <div class="container">
+      <h2><i class="px px-calculator"></i> Operators</h2>
+      <p>Operators perform operations on data.</p>
+      <ul>
+        <li>Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulus), <code>**</code> (power)</li>
+        <li>Comparison: <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>=</code>, <code><=</code></li>
+        <li>Logical: <code>and</code>, <code>or</code>, <code>not</code></li>
+      </ul>
+      <pre><code>a = 10
+b = 3
+print(a + b)  # Output: 13
+print(a > b)  # Output: True
+print(a % b)  # Output: 1</code></pre>
+    </div>
+  </section>
+
+  <section id="conditionals">
+    <div class="container">
+      <h2><i class="px px-check"></i> Conditionals</h2>
+      <p>Use <code>if</code>, <code>elif</code>, and <code>else</code> to make decisions.</p>
+      <pre><code>age = 18
+if age >= 18:
+    print("Adult")
+elif age >= 13:
+    print("Teen")
+else:
+    print("Child")</code></pre>
+      <p>Indentation (spaces) is important in Python!</p>
+    </div>
+  </section>
+
+  <section id="loops">
+    <div class="container">
+      <h2><i class="px px-repeat"></i> Loops</h2>
+      <p>Loops repeat code. Use <code>for</code> for a set range or <code>while</code> for conditions.</p>
+      <pre><code># For loop
+for i in range(5):
+    print(i)  # Output: 0, 1, 2, 3, 4
+
+# While loop
+count = 0
+while count < 3:
+    print(count)
+    count += 1  # Output: 0, 1, 2</code></pre>
+    </div>
+  </section>
+
+  <section id="functions">
+    <div class="container">
+      <h2><i class="px px-code"></i> Functions</h2>
+      <p>Functions are reusable blocks of code.</p>
+      <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!</code></pre>
+      <p>Use <code>def</code> to define a function and <code>return</code> to send back a value.</p>
+    </div>
+  </section>
+
+  <section id="lists">
+    <div class="container">
+      <h2><i class="px px-list"></i> Lists</h2>
+      <p>Lists store multiple items in order. They are mutable (changeable).</p>
+      <pre><code>fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Output: apple
+fruits.append("orange")  # Add item
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']</code></pre>
+      <p>Common methods: <code>append()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code>.</p>
+    </div>
+  </section>
+
+  <section id="dictionaries">
+    <div class="container">
+      <h2><i class="px px-book"></i> Dictionaries</h2>
+      <p>Dictionaries store key-value pairs.</p>
+      <pre><code>person = {"name": "Alice", "age": 25}
+print(person["name"])  # Output: Alice
+person["city"] = "New York"  # Add key-value
+print(person)  # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'}</code></pre>
+    </div>
+  </section>
+
+  <section id="tuples">
+    <div class="container">
+      <h2><i class="px px-lock"></i> Tuples</h2>
+      <p>Tuples are like lists but immutable (cannot change).</p>
+      <pre><code>coords = (10, 20)
+print(coords[0])  # Output: 10</code></pre>
+    </div>
+  </section>
+
+  <section id="sets">
+    <div class="container">
+      <h2><i class="px px-filter"></i> Sets</h2>
+      <p>Sets store unique items, unordered.</p>
+      <pre><code>numbers = {1, 2, 2, 3}
+print(numbers)  # Output: {1, 2, 3}</code></pre>
+    </div>
+  </section>
+
+  <section id="strings">
+    <div class="container">
+      <h2><i class="px px-text"></i> Strings</h2>
+      <p>Strings are text, enclosed in quotes.</p>
+      <pre><code>text = "Hello, World!"
+print(text.upper())  # Output: HELLO, WORLD!
+print(text[0:5])  # Output: Hello</code></pre>
+      <p>Common methods: <code>upper()</code>, <code>lower()</code>, <code>strip()</code>, <code>split()</code>.</p>
+    </div>
+  </section>
+
+  <section id="fileio">
+    <div class="container">
+      <h2><i class="px px-file"></i> File Input/Output</h2>
+      <p>Read from or write to files.</p>
+      <pre><code># Write to a file
+with open("example.txt", "w") as file:
+    file.write("Hello, Python!")
+
+# Read from a file
+with open("example.txt", "r") as file:
+    content = file.read()
+print(content)  # Output: Hello, Python!</code></pre>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="container">
+      <h2><i class="px px-package"></i> Modules</h2>
+      <p>Modules are pre-written code you can use.</p>
+      <pre><code>import math
+print(math.sqrt(16))  # Output: 4.0</code></pre>
+      <p>Install external modules with <code>pip install module_name</code>.</p>
+    </div>
+  </section>
+
+  <section id="exceptions">
+    <div class="container">
+      <h2><i class="px px-alert"></i> Exception Handling</h2>
+      <p>Handle errors gracefully with <code>try</code> and <code>except</code>.</p>
+      <pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")</code></pre>
+    </div>
+  </section>
+
+  <section id="oop">
+    <div class="container">
+      <h2><i class="px px-object-group"></i> Object-Oriented Programming (OOP)</h2>
+      <p>OOP organizes code using <strong>classes</strong> and <strong>objects</strong>. Think of a class as a blueprint and an object as something built from that blueprint.</p>
+      <p>Key concepts:</p>
+      <ul>
+        <li><strong>Class</strong>: Defines properties (attributes) and behaviors (methods).</li>
+        <li><strong>Object</strong>: An instance of a class.</li>
+        <li><strong>Attributes</strong>: Data stored in an object.</li>
+        <li><strong>Methods</strong>: Functions inside a class.</li>
+        <li><strong>Inheritance</strong>: A class can inherit from another class to reuse code.</li>
+        <li><strong>Encapsulation</strong>: Hide data using private attributes (with <code>_</code> or <code>__</code>).</li>
+        <li><strong>Polymorphism</strong>: Same method works differently for different classes.</li>
+      </ul>
+      <p>Example: Create a <code>Dog</code> class and use it.</p>
+      <pre><code># Define a class
+class Dog:
+    def __init__(self, name, age):  # Constructor to initialize attributes
+        self.name = name  # Attribute
+        self.age = age
+
+    def bark(self):  # Method
+        return f"{self.name} says Woof!"
+
+# Create objects (instances)
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+# Access attributes and methods
+print(dog1.name)  # Output: Buddy
+print(dog1.bark())  # Output: Buddy says Woof!
+print(dog2.age)  # Output: 5</code></pre>
+      <p>Example: Inheritance</p>
+      <pre><code>class Animal:
+    def __init__(self, species):
+        self.species = species
+
+    def make_sound(self):
+        return "Some sound"
+
+class Cat(Animal):  # Cat inherits from Animal
+    def __init__(self, name, species):
+        super().__init__(species)  # Call parent class constructor
+        self.name = name
+
+    def make_sound(self):  # Override parent method
+        return f"{self.name} says Meow!"
+
+cat = Cat("Whiskers", "Feline")
+print(cat.species)  # Output: Feline
+print(cat.make_sound())  # Output: Whiskers says Meow!</code></pre>
+      <p>Tips: Use <code>self</code> to refer to the object’s attributes/methods. Use <code>super()</code> for inheritance.</p>
+    </div>
+  </section>
+
+  <section id="bestpractices">
+    <div class="container">
+      <h2><i class="px px-star"></i> Best Practices</h2>
+      <p>Write clean, readable Python code.</p>
+      <ul>
+        <li>Use meaningful variable and class names.</li>
+        <li>Add comments to explain code.</li>
+        <li>Follow PEP 8 style guidelines.</li>
+        <li>Keep functions and methods short and focused.</li>
+        <li>Test your code regularly.</li>
+        <li>Use encapsulation to protect class data.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="text-white text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0">Made with <i class="px px-heart"></i> by <strong>ProXentix</strong></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
